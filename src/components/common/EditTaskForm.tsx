@@ -37,7 +37,12 @@ function EditTaskForm({ taskId, tasks, setShowEditForm }: EditTaskFormProps){
     }
 
     const handleSubmit = (): void => {
-        
+        console.log('Submitted:', {
+            id: selectedTask.id,
+            title: edittedTaskTitle,
+            priority: edittedTaskPriority,
+            status: edittedTaskStatus
+        });
     }
 
     return(
