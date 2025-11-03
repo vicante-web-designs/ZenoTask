@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import TaskDisplay from './TaskDisplay';
+import type { Dispatch, SetStateAction } from 'react';
 
 interface Task{
     id:number;
@@ -9,15 +10,14 @@ interface Task{
 }
 interface TaskFilterProps{
     tasks: Task[];
+    setTasks: Dispatch<SetStateAction<Task[]>>
     handleDelete: (x: number) => void;
 }
 
-function TaskFilter({ tasks, handleDelete }: TaskFilterProps){
+function TaskFilter({ tasks, handleDelete, setTasks }: TaskFilterProps){
     const [filter, setFilter] = useState<string>('');
    
     const filteredTask = tasks.filter(task => task.status === filter)
-
-    console.log(filteredTask)
 
     return(
         <section className='m-2 border border-gray-400 py-1 px-2 rounded-2xl bg-gray-300'>
@@ -40,7 +40,7 @@ function TaskFilter({ tasks, handleDelete }: TaskFilterProps){
 
            {
             filteredTask && 
-           <TaskDisplay tasks={filteredTask} handleDelete={handleDelete}/>
+           <TaskDisplay tasks={filteredTask} handleDelete={handleDelete} setTasks={setTasks}/>
            }
         </section>
     )

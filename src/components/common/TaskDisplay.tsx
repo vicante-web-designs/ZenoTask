@@ -1,5 +1,6 @@
 import EditTaskForm from './EditTaskForm';
 import { useState } from 'react';
+import type { Dispatch, SetStateAction} from 'react'
 
 interface Task{
     id: number
@@ -9,10 +10,11 @@ interface Task{
 }
 interface TaskDisplayProps{
     tasks: Task[];
+    setTasks: Dispatch<SetStateAction<Task[]>>;
     handleDelete: (x: number) => void;
 }
 
-function TaskDisplay({tasks, handleDelete}: TaskDisplayProps){
+function TaskDisplay({tasks, setTasks, handleDelete}: TaskDisplayProps){
     const [showEditForm, setShowEditForm] = useState<boolean>(false);
     const [selectedTaskId, setSelectedTaskId] = useState<number>(0)
 
@@ -66,7 +68,7 @@ function TaskDisplay({tasks, handleDelete}: TaskDisplayProps){
             }
 
             {
-                showEditForm && <EditTaskForm taskId={selectedTaskId}  tasks={tasks} setShowEditForm={setShowEditForm}/>
+                showEditForm && <EditTaskForm taskId={selectedTaskId}  tasks={tasks} setTasks={setTasks} setShowEditForm={setShowEditForm}/>
             }
         </section>
     )
