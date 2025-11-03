@@ -1,13 +1,8 @@
 import EditTaskForm from './EditTaskForm';
 import { useState } from 'react';
 import type { Dispatch, SetStateAction} from 'react'
+import type { Task } from '../types/TypeTasks';
 
-interface Task{
-    id: number
-    title: string;
-    priority: string;
-    status: string;
-}
 interface TaskDisplayProps{
     tasks: Task[];
     setTasks: Dispatch<SetStateAction<Task[]>>;

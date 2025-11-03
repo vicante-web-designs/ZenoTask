@@ -1,13 +1,8 @@
 import { useState } from 'react';
 import TaskDisplay from './TaskDisplay';
 import type { Dispatch, SetStateAction } from 'react';
+import type { Task } from '../types/TypeTasks';
 
-interface Task{
-    id:number;
-    title: string;
-    priority: string;
-    status: string;
-}
 interface TaskFilterProps{
     tasks: Task[];
     setTasks: Dispatch<SetStateAction<Task[]>>
