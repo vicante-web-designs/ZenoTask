@@ -115,7 +115,7 @@ function App() {
       </section>
 
       <section>
-        <TaskFilter tasks={tasks} handleDelete={handleDelete}/>
+        <TaskFilter tasks={tasks} handleDelete={handleDelete} setTasks={setTasks}/>
       </section>
     </main>
   </>
