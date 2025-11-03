@@ -10,22 +10,20 @@ interface Task{
 interface EditTaskFormProps{
     taskId: number;
     tasks: Task[];
+    setTasks: Dispatch<SetStateAction<Task[]>>;
     setShowEditForm: Dispatch<SetStateAction<boolean>>
 }
 
-function EditTaskForm({ taskId, tasks, setShowEditForm }: EditTaskFormProps){
-    const [selectedTask, setSelectedTask] = useState<Task>({id: 0, title: '', priority: '', status: ''})
+function EditTaskForm({ taskId, tasks, setTasks, setShowEditForm }: EditTaskFormProps){
 
     useEffect(() => {
         const task: Task = (tasks.filter(task => task.id === taskId))[0];
 
-        setSelectedTask(task);
         setEdittedTaskTitle(task.title);
         setEdittedTaskPriority(task.priority);
         setEdittedTaskStatus(task.status);
     }, [tasks, taskId])
 
-    console.log(selectedTask)
     const [edittedTaskTitle, setEdittedTaskTitle] = useState<string>('');
 
     const [edittedTaskPriority, setEdittedTaskPriority] = useState<string>('');
@@ -37,12 +35,17 @@ function EditTaskForm({ taskId, tasks, setShowEditForm }: EditTaskFormProps){
     }
 
     const handleSubmit = (): void => {
-        console.log('Submitted:', {
-            id: selectedTask.id,
-            title: edittedTaskTitle,
-            priority: edittedTaskPriority,
-            status: edittedTaskStatus
-        });
+        const updatedTask = tasks.map(task => 
+            task.id === taskId ? {
+                ...task,
+                title: edittedTaskTitle,
+                priority: edittedTaskPriority,
+                status: edittedTaskStatus
+            } : task
+        )
+
+        setTasks(updatedTask)
+        setShowEditForm(false)
     }
 
     return(
