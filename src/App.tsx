@@ -3,15 +3,8 @@ import StatsCard from './components/common/StatsCard'
 import TaskForm from './components/common/TaskForm'
 import TaskDisplay from './components/common/TaskDisplay'
 import TaskFilter from './components/common/TaskFilter'
-
+import type { Task } from './components/types/TypeTasks'
 import { useState, useEffect } from 'react'
-
-interface Task{
-  id:number;
-  title: string;
-  priority: string;
-  status: string;
-}
 
 class TaskClass{
   id:number;
