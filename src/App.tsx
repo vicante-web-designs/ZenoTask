@@ -1,5 +1,6 @@
 import './App.css'
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import Dashboard from './components/pages/Dashboard'
 
 function App() {  
 
@@ -7,10 +8,14 @@ function App() {
   <BrowserRouter>
     <>
       <button className='bg-blue-600 px-4 py-2 rounded-full text-white'>
-        <a href="./components/pages/Dashboard.tsx">
-          click me
-        </a>
+        <Link to='/dashboard'>
+          Click me
+        </Link>
       </button>
+
+      <Routes>
+        <Route path='/dashboard' element={<Dashboard />}/>
+      </Routes>
     </>
   </BrowserRouter>
  )
