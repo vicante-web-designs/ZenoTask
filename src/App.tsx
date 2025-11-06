@@ -1,13 +1,18 @@
 import './App.css'
+import { BrowserRouter } from 'react-router-dom'
 
 function App() {  
 
  return(
-  <>
-    <button>
-      
-    </button>
-  </>
+  <BrowserRouter>
+    <>
+      <button className='bg-blue-600 px-4 py-2 rounded-full text-white'>
+        <a href="./components/pages/Dashboard.tsx">
+          click me
+        </a>
+      </button>
+    </>
+  </BrowserRouter>
  )
 }
 
