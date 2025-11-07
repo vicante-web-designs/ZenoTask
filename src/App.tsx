@@ -7,13 +7,16 @@ function App() {
  return(
   <BrowserRouter>
     <>
-      <button className='bg-blue-600 px-4 py-2 rounded-full text-white'>
-        <Link to='/dashboard'>
-          Click me
-        </Link>
-      </button>
-
       <Routes>
+        <Route path='/' 
+          element={
+            <button className='bg-blue-600 px-4 py-2 rounded-full text-white'>
+              <Link to='/dashboard'>
+                Click me
+              </Link>
+            </button>
+          }
+        />
         <Route path='/dashboard' element={<Dashboard />}/>
       </Routes>
     </>
