@@ -1,15 +1,15 @@
-import EditTaskForm from './EditTaskForm';
+import EditTaskForm from '../features/EditTaskForm';
 import { useState } from 'react';
 import type { Dispatch, SetStateAction} from 'react'
 import type { Task } from '../types/TypeTasks';
 
-interface TaskDisplayProps{
+interface TaskListProps{
     tasks: Task[];
     setTasks: Dispatch<SetStateAction<Task[]>>;
     handleDelete: (x: number) => void;
 }
 
-function TaskDisplay({tasks, setTasks, handleDelete}: TaskDisplayProps){
+function TaskList({tasks, setTasks, handleDelete}: TaskListProps){
     const [showEditForm, setShowEditForm] = useState<boolean>(false);
     const [selectedTaskId, setSelectedTaskId] = useState<number>(0)
 
@@ -69,4 +69,4 @@ function TaskDisplay({tasks, setTasks, handleDelete}: TaskDisplayProps){
     )
 }
 
-export default TaskDisplay;
+export default TaskList;

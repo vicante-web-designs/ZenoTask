@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import TaskDisplay from './TaskDisplay';
+import TaskDisplay from '../pages/TaskList';
 import type { Dispatch, SetStateAction } from 'react';
 import type { Task } from '../types/TypeTasks';
 

@@ -1,6 +1,6 @@
 import StatsCard from '../common/StatsCard';
 import TaskForm from '../common/TaskForm';
-import TaskDisplay from '../common/TaskDisplay';
+import TaskList from './TaskList';
 import TaskFilter from '../common/TaskFilter';
 import type { Task } from '../types/TypeTasks';
 import { useState, useEffect } from 'react'
@@ -98,7 +98,7 @@ const Dashboard = () => {
                         Manage your Tasks
                     </p>
 
-                    <TaskDisplay tasks={tasks} handleDelete={handleDelete} setTasks={setTasks}/>
+                    <TaskList tasks={tasks} handleDelete={handleDelete} setTasks={setTasks}/>
 
                     <button className='bg-red-700 text-white w-fit px-16 py-2 m-auto rounded-xl' onClick={() => {
                         const canClearAll = confirm('Are you Sure you want to Clear All?');

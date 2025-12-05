@@ -1,26 +1,27 @@
 import './App.css'
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Navbar from './components/layout/Navbar'
+import Footer from './components/layout/Footer'
+import Home from './components/pages/Home'
 import Dashboard from './components/pages/Dashboard'
+import TaskList from './components/pages/TaskList'
 
 function App() {  
 
  return(
-  <BrowserRouter>
-    <>
-      <Routes>
-        <Route path='/' 
-          element={
-            <button className='bg-blue-600 px-4 py-2 rounded-full text-white'>
-              <Link to='/dashboard'>
-                Click me
-              </Link>
-            </button>
-          }
-        />
-        <Route path='/dashboard' element={<Dashboard />}/>
-      </Routes>
-    </>
-  </BrowserRouter>
+  <Router>
+    <div>
+      <Navbar />
+      <main>
+        <Routes>
+          <Route path='/' element={<Home />}/>
+          <Route path='/Dashboard' element={<Dashboard />}/>
+          <Route path='/TaskList' element={<TaskList />}/>
+        </Routes>
+      </main>
+      <Footer />
+    </div>
+  </Router>
  )
 }
 

@@ -38,7 +38,7 @@ function TaskForm({ setTasks, TaskClass }: TaskFormProps){
                 <label htmlFor="">
                     Task Name:
                 </label>
-                <input type="text" className='border block bg-gray-300 border-gray-400 rounded-xl p-2' value={taskTitle} onChange={e => {
+                <input title='Input task' type="text" className='border block bg-gray-300 border-gray-400 rounded-xl p-2' value={taskTitle} onChange={e => {
                     setTaskTitle(e.target.value.trim())
                 }}/>
             </section>
@@ -48,7 +48,7 @@ function TaskForm({ setTasks, TaskClass }: TaskFormProps){
                     <label htmlFor="">
                         Priority Level
                     </label>
-                    <select name="" id=""  className='border block bg-gray-300 border-gray-400 rounded-xl p-2' value={taskPriority}  onChange={e => {
+                    <select title='Select priority level' name="" id=""  className='border block bg-gray-300 border-gray-400 rounded-xl p-2' value={taskPriority}  onChange={e => {
                     setTaskPriority(e.target.value.trim())}}>
                         <option value="select status">Select Priority Level</option>
                         <option value="top">Top</option>
@@ -61,7 +61,7 @@ function TaskForm({ setTasks, TaskClass }: TaskFormProps){
                     <label htmlFor="">
                         Status
                     </label>
-                    <select name="" id=""  className='border block bg-gray-300 border-gray-400 rounded-xl p-2' value={taskStatus}  onChange={e => {
+                    <select title='Select status level' name="" id=""  className='border block bg-gray-300 border-gray-400 rounded-xl p-2' value={taskStatus}  onChange={e => {
                     setTaskStatus(e.target.value.trim())}}>
                         <option value="select status">Select Status</option>
                         <option value="completed">Completed</option>

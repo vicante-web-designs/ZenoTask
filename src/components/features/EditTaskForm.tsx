@@ -61,7 +61,7 @@ function EditTaskForm({ taskId, tasks, setTasks, setShowEditForm }: EditTaskForm
                     <label htmlFor="">
                         Task Name:
                     </label>
-                    <input type="text" className='border block bg-gray-300 border-gray-400 rounded-xl p-2' value={edittedTaskTitle} onChange={e => {
+                    <input title='Task name' type="text" className='border block bg-gray-300 border-gray-400 rounded-xl p-2' value={edittedTaskTitle} onChange={e => {
                         setEdittedTaskTitle(e.target.value.trim())
                     }}/>
                 </section>
@@ -71,7 +71,7 @@ function EditTaskForm({ taskId, tasks, setTasks, setShowEditForm }: EditTaskForm
                         <label htmlFor="">
                             Priority Level
                         </label>
-                        <select name="" id=""  className='border block bg-gray-300 border-gray-400 rounded-xl p-2' value={edittedTaskPriority}  onChange={e => {
+                        <select title='Select priority level' name="" id=""  className='border block bg-gray-300 border-gray-400 rounded-xl p-2' value={edittedTaskPriority}  onChange={e => {
                         setEdittedTaskPriority(e.target.value.trim())}}>
                             <option value="select status">Select Priority Level</option>
                             <option value="top">Top</option>
@@ -84,7 +84,7 @@ function EditTaskForm({ taskId, tasks, setTasks, setShowEditForm }: EditTaskForm
                         <label htmlFor="">
                             Status
                         </label>
-                        <select name="" id=""  className='border block bg-gray-300 border-gray-400 rounded-xl p-2' value={edittedTaskStatus}  onChange={e => {
+                        <select title='Select status level' name="" id=""  className='border block bg-gray-300 border-gray-400 rounded-xl p-2' value={edittedTaskStatus}  onChange={e => {
                         setEdittedTaskStatus(e.target.value.trim())}}>
                             <option value="select status">Select Status</option>
                             <option value="completed">Completed</option>
